@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caja Registradora - Restaurante</title>
+
+    <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <div class="contenedor">
+        <h2>🍕 Pide tu Combo 🍔</h2>
+
+        <form id="formularioRestaurante">
+
+            <!-- 1. Plato Principal -->
+            <div class="seccion">
+                <label for="platoPrincipal">Elige tu plato principal:</label>
+
+                <select id="platoPrincipal" required>
+                    <option value="pizza">Pizza Familiar — $12.00</option>
+                    <option value="hamburguesa">Hamburguesa con Queso — $7.50</option>
+                </select>
+            </div>
+
+            <!-- 2. Tamaño de Bebida -->
+            <div class="seccion">
+                <label>Tamaño de la Bebida:</label>
+
+                <div class="opciones-inline">
+                    <input type="radio" id="bebidaP"
+                           name="tamanoBebida" value="pequena" checked>
+                    <label for="bebidaP" style="font-weight: normal;">
+                        Pequeña (+$1.00)
+                    </label>
+
+                    <input type="radio" id="bebidaM"
+                           name="tamanoBebida" value="mediana">
+                    <label for="bebidaM" style="font-weight: normal;">
+                        Mediana (+$1.50)
+                    </label>
+
+                    <input type="radio" id="bebidaG"
+                           name="tamanoBebida" value="grande">
+                    <label for="bebidaG" style="font-weight: normal;">
+                        Grande (+$2.00)
+                    </label>
+                </div>
+            </div>
+
+            <!-- 3. Acompañamientos y Extras -->
+            <div class="seccion">
+                <label>¿Deseas agregar extras?</label>
+
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="extraPapas" value="papas">
+                        <label for="extraPapas" style="font-weight: normal;">
+                            Papas Fritas (+$2.50)
+                        </label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="extraHelado" value="helado">
+                        <label for="extraHelado" style="font-weight: normal;">
+                            Helado de Vainilla (+$1.80)
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit">Calcular Cuenta</button>
+        </form>
+
+        <!-- Recibo del pedido -->
+        <div id="reciboRespuesta" style="display: none;"></div>
+    </div>
+
+    <!-- Panel de Administración -->
+    <div class="panel-admin">
+        <h3>📋 Administración de Ventas</h3>
+
+        <div class="opciones-inline">
+            <button type="button" id="btnVerHistorial" class="btn-azul">
+                📋 Ver Historial
+            </button>
+
+            <button type="button" id="btnBorrarHistorial" class="btn-rojo">
+                🗑️ Limpiar Base de Datos
+            </button>
+        </div>
+
+        <!-- Aquí se mostrarán los pedidos guardados -->
+        <div id="tablaHistorial" style="display: none;"></div>
+    </div>
+
+    <!-- Primero se carga la biblioteca Dexie -->
+    <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
+
+    <!-- Después se carga tu archivo JavaScript -->
+    <script src="programa.js"></script>
+
+</body>
+</html>
