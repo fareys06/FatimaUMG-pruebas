@@ -4,155 +4,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sazón | Restaurante</title>
+    <title>SAZÓN | Restaurante</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
 <body>
 
     <header class="encabezado">
         <div class="logo">🍽️ SAZÓN</div>
-        <p>Un sabor especial en cada momento</p>
-        <span class="etiqueta">RESTAURANTE & CAJA REGISTRADORA</span>
+        <p>Sabores que hacen feliz tu día</p>
+        <span>RESTAURANTE • PEDIDOS • FACTURACIÓN</span>
     </header>
 
     <main class="contenedor">
 
-        <section class="presentacion">
-            <div>
-                <p class="mini-titulo">BIENVENIDO A SAZÓN</p>
-                <h1>¡Hoy se come <span>delicioso!</span></h1>
-                <p>Prepara tu combo favorito y disfruta de algo especial.</p>
-            </div>
-            <div class="icono-comida">🍕</div>
+        <section class="bienvenida">
+            <h1>¡Bienvenido a SAZÓN!</h1>
+            <p>Prepara tu pedido, elige tus favoritos y disfruta.</p>
         </section>
 
-        <section class="tarjeta">
-            <div class="titulo-seccion">
-                <span class="numero">01</span>
-                <div>
-                    <h2>Arma tu pedido</h2>
-                    <p>Selecciona tus favoritos.</p>
-                </div>
-            </div>
+        <form id="formularioRestaurante">
 
-            <form id="formularioRestaurante">
+            <section class="seccion">
+                <h2>👤 Datos del cliente</h2>
+                <label for="nombreCliente">Nombre del cliente</label>
+                <input type="text" id="nombreCliente"
+                       placeholder="Escribe tu nombre" required>
+            </section>
 
-                <div class="seccion">
-                    <label for="nombreCliente">Nombre del cliente</label>
-                    <input type="text" id="nombreCliente"
-                           placeholder="Escribe tu nombre" required>
-                </div>
+            <section class="seccion">
+                <h2>🍽️ Platos principales</h2>
+                <p class="ayuda">Puedes elegir varios platos y cantidades.</p>
 
-                <div class="seccion">
-                    <label for="platoPrincipal">🍴 Plato principal</label>
-                    <select id="platoPrincipal" required>
-                        <option value="pizza">🍕 Pizza familiar — $12.00</option>
-                        <option value="hamburguesa">🍔 Hamburguesa con queso — $7.50</option>
-                        <option value="tacos">🌮 Tacos — $8.00</option>
-                        <option value="pasta">🍝 Pasta cremosa — $10.00</option>
-                        <option value="pollo">🍗 Pollo crujiente — $9.50</option>
-                    </select>
+                <div class="producto-fila">
+                    <label for="cantPizza">🍕 Pizza familiar <small>$12.00</small></label>
+                    <input type="number" id="cantPizza" min="0" max="20" value="0">
                 </div>
 
-                <div class="seccion">
-                    <label for="cantidad">🔢 Cantidad de platos</label>
-                    <input type="number" id="cantidad" min="1" max="20"
-                           value="1" required>
+                <div class="producto-fila">
+                    <label for="cantHamburguesa">🍔 Hamburguesa con queso <small>$7.50</small></label>
+                    <input type="number" id="cantHamburguesa" min="0" max="20" value="0">
                 </div>
 
-                <div class="seccion">
-                    <label>🥤 Tamaño de la bebida</label>
-                    <div class="opciones-bebida">
-                        <label class="opcion-tarjeta" for="bebidaP">
-                            <input type="radio" id="bebidaP"
-                                   name="tamanoBebida" value="pequena" checked>
-                            <span class="emoji">🥤</span>
-                            <strong>Pequeña</strong>
-                            <span>+$1.00</span>
-                        </label>
-
-                        <label class="opcion-tarjeta" for="bebidaM">
-                            <input type="radio" id="bebidaM"
-                                   name="tamanoBebida" value="mediana">
-                            <span class="emoji">🥤</span>
-                            <strong>Mediana</strong>
-                            <span>+$1.50</span>
-                        </label>
-
-                        <label class="opcion-tarjeta" for="bebidaG">
-                            <input type="radio" id="bebidaG"
-                                   name="tamanoBebida" value="grande">
-                            <span class="emoji">🥤</span>
-                            <strong>Grande</strong>
-                            <span>+$2.00</span>
-                        </label>
-                    </div>
+                <div class="producto-fila">
+                    <label for="cantTacos">🌮 Tacos <small>$8.00</small></label>
+                    <input type="number" id="cantTacos" min="0" max="20" value="0">
                 </div>
 
-                <div class="seccion">
-                    <label>✨ Agrega algo extra</label>
-
-                    <div class="extras-grid">
-                        <label class="extra-item" for="extraPapas">
-                            <input type="checkbox" id="extraPapas" value="papas">
-                            <span>🍟</span>
-                            <div>
-                                <strong>Papas fritas</strong>
-                                <small>+$2.50</small>
-                            </div>
-                        </label>
-
-                        <label class="extra-item" for="extraHelado">
-                            <input type="checkbox" id="extraHelado" value="helado">
-                            <span>🍨</span>
-                            <div>
-                                <strong>Helado de vainilla</strong>
-                                <small>+$1.80</small>
-                            </div>
-                        </label>
-
-                        <label class="extra-item" for="extraEnsalada">
-                            <input type="checkbox" id="extraEnsalada" value="ensalada">
-                            <span>🥗</span>
-                            <div>
-                                <strong>Ensalada fresca</strong>
-                                <small>+$2.00</small>
-                            </div>
-                        </label>
-
-                        <label class="extra-item" for="extraPostre">
-                            <input type="checkbox" id="extraPostre" value="postre">
-                            <span>🍰</span>
-                            <div>
-                                <strong>Pastel del día</strong>
-                                <small>+$2.75</small>
-                            </div>
-                        </label>
-                    </div>
+                <div class="producto-fila">
+                    <label for="cantPasta">🍝 Pasta cremosa <small>$10.00</small></label>
+                    <input type="number" id="cantPasta" min="0" max="20" value="0">
                 </div>
 
-                <div class="seccion">
-                    <label for="comentario">📝 Indicaciones especiales</label>
-                    <textarea id="comentario" rows="3"
-                        placeholder="Ejemplo: sin salsa, extra queso..."></textarea>
+                <div class="producto-fila">
+                    <label for="cantPollo">🍗 Pollo crujiente <small>$9.50</small></label>
+                    <input type="number" id="cantPollo" min="0" max="20" value="0">
                 </div>
 
-                <button type="submit" class="btn-principal">
-                    🧾 Calcular cuenta y guardar pedido
-                </button>
-            </form>
+                <div class="producto-fila">
+                    <label for="cantDerretido">🧀 Derretido de queso <small>$6.50</small></label>
+                    <input type="number" id="cantDerretido" min="0" max="20" value="0">
+                </div>
+            </section>
 
-            <div id="reciboRespuesta"></div>
-        </section>
+            <section class="seccion">
+                <h2>🥤 Bebidas</h2>
+                <p class="ayuda">Elige una o varias bebidas.</p>
+
+                <div class="producto-fila">
+                    <label for="cantCoca">Coca-Cola <small>$1.50</small></label>
+                    <input type="number" id="cantCoca" min="0" max="50" value="0">
+                </div>
+
+                <div class="producto-fila">
+                    <label for="cantSprite">Sprite <small>$1.50</small></label>
+                    <input type="number" id="cantSprite" min="0" max="50" value="0">
+                </div>
+
+                <div class="producto-fila">
+                    <label for="cantAgua">Agua pura <small>$1.00</small></label>
+                    <input type="number" id="cantAgua" min="0" max="50" value="0">
+                </div>
+
+                <div class="producto-fila">
+                    <label for="cantJugo">Jugo natural <small>$2.00</small></label>
+                    <input type="number" id="cantJugo" min="0" max="50" value="0">
+                </div>
+            </section>
+
+            <section class="seccion">
+                <h2>🍟 Complementos y extras</h2>
+                <p class="ayuda">Puedes agregar todos los complementos que desees.</p>
+
+                <div class="producto-fila">
+                    <label for="cantPapas">🍟 Papas fritas <small>$2.50</small></label>
+                    <input type="number" id="cantPapas" min="0" max="50" value="0">
+                </div>
+
+                <div class="producto-fila">
+                    <label for="cantPure">🥔 Puré de papas <small>$2.25</small></label>
+                    <input type="number" id="cantPure" min="0" max="50" value="0">
+                </div>
+
+                <div class="producto-fila">
+                    <label for="cantEnsalada">🥗 Ensalada fresca <small>$2.00</small></label>
+                    <input type="number" id="cantEnsalada" min="0" max="50" value="0">
+                </div>
+
+                <div class="producto-fila">
+                    <label for="cantHelado">🍨 Helado de vainilla <small>$1.80</small></label>
+                    <input type="number" id="cantHelado" min="0" max="50" value="0">
+                </div>
+
+                <div class="producto-fila">
+                    <label for="cantPostre">🍰 Pastel del día <small>$2.75</small></label>
+                    <input type="number" id="cantPostre" min="0" max="50" value="0">
+                </div>
+            </section>
+
+            <section class="seccion">
+                <h2>📝 Indicaciones especiales</h2>
+                <label for="comentario">Comentarios del pedido</label>
+                <textarea id="comentario" rows="3"
+                    placeholder="Ejemplo: sin salsa, extra queso..."></textarea>
+            </section>
+
+            <button type="submit" class="btn-principal">
+                🧾 Calcular cuenta y guardar pedido
+            </button>
+
+        </form>
+
+        <section id="reciboRespuesta" class="recibo" style="display:none"></section>
 
         <section class="panel-admin">
-            <div class="titulo-seccion">
-                <span class="numero">02</span>
-                <div>
-                    <h2>Administración de ventas</h2>
-                    <p>Consulta los pedidos guardados.</p>
-                </div>
-            </div>
+            <h2>📋 Administración de ventas</h2>
+            <p>Consulta tus pedidos guardados y las ventas acumuladas.</p>
 
             <div class="botones-admin">
                 <button type="button" id="btnVerHistorial" class="btn-azul">
@@ -164,17 +150,15 @@
                 </button>
             </div>
 
-            <div id="tablaHistorial"></div>
+            <div id="tablaHistorial" style="display:none"></div>
         </section>
 
     </main>
 
     <footer>
-        <p>SAZÓN © 2026 · Preparado con ❤️ para ti</p>
-        <small>Gracias por elegirnos.</small>
+        <p>🍽️ SAZÓN Restaurante | Gracias por tu preferencia</p>
     </footer>
 
-    <!-- Se conserva Dexie y el nombre de la base de datos -->
     <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
     <script src="programa.js"></script>
 
