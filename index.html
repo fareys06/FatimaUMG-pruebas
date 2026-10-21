@@ -4,104 +4,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caja Registradora - Restaurante</title>
-
-    <!-- Enlace al archivo CSS -->
+    <title>Sazón | Restaurante</title>
     <link rel="stylesheet" href="estilos.css">
 </head>
-
 <body>
 
-    <div class="contenedor">
-        <h2>🍕 Pide tu Combo 🍔</h2>
+    <header class="encabezado">
+        <div class="logo">🍽️ SAZÓN</div>
+        <p>Un sabor especial en cada momento</p>
+        <span class="etiqueta">RESTAURANTE & CAJA REGISTRADORA</span>
+    </header>
 
-        <form id="formularioRestaurante">
+    <main class="contenedor">
 
-            <!-- 1. Plato Principal -->
-            <div class="seccion">
-                <label for="platoPrincipal">Elige tu plato principal:</label>
-
-                <select id="platoPrincipal" required>
-                    <option value="pizza">Pizza Familiar — $12.00</option>
-                    <option value="hamburguesa">Hamburguesa con Queso — $7.50</option>
-                </select>
+        <section class="presentacion">
+            <div>
+                <p class="mini-titulo">BIENVENIDO A SAZÓN</p>
+                <h1>¡Hoy se come <span>delicioso!</span></h1>
+                <p>Prepara tu combo favorito y disfruta de algo especial.</p>
             </div>
+            <div class="icono-comida">🍕</div>
+        </section>
 
-            <!-- 2. Tamaño de Bebida -->
-            <div class="seccion">
-                <label>Tamaño de la Bebida:</label>
-
-                <div class="opciones-inline">
-                    <input type="radio" id="bebidaP"
-                           name="tamanoBebida" value="pequena" checked>
-                    <label for="bebidaP" style="font-weight: normal;">
-                        Pequeña (+$1.00)
-                    </label>
-
-                    <input type="radio" id="bebidaM"
-                           name="tamanoBebida" value="mediana">
-                    <label for="bebidaM" style="font-weight: normal;">
-                        Mediana (+$1.50)
-                    </label>
-
-                    <input type="radio" id="bebidaG"
-                           name="tamanoBebida" value="grande">
-                    <label for="bebidaG" style="font-weight: normal;">
-                        Grande (+$2.00)
-                    </label>
+        <section class="tarjeta">
+            <div class="titulo-seccion">
+                <span class="numero">01</span>
+                <div>
+                    <h2>Arma tu pedido</h2>
+                    <p>Selecciona tus favoritos.</p>
                 </div>
             </div>
 
-            <!-- 3. Acompañamientos y Extras -->
-            <div class="seccion">
-                <label>¿Deseas agregar extras?</label>
+            <form id="formularioRestaurante">
 
-                <div class="checkbox-group">
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="extraPapas" value="papas">
-                        <label for="extraPapas" style="font-weight: normal;">
-                            Papas Fritas (+$2.50)
+                <div class="seccion">
+                    <label for="nombreCliente">Nombre del cliente</label>
+                    <input type="text" id="nombreCliente"
+                           placeholder="Escribe tu nombre" required>
+                </div>
+
+                <div class="seccion">
+                    <label for="platoPrincipal">🍴 Plato principal</label>
+                    <select id="platoPrincipal" required>
+                        <option value="pizza">🍕 Pizza familiar — $12.00</option>
+                        <option value="hamburguesa">🍔 Hamburguesa con queso — $7.50</option>
+                        <option value="tacos">🌮 Tacos — $8.00</option>
+                        <option value="pasta">🍝 Pasta cremosa — $10.00</option>
+                        <option value="pollo">🍗 Pollo crujiente — $9.50</option>
+                    </select>
+                </div>
+
+                <div class="seccion">
+                    <label for="cantidad">🔢 Cantidad de platos</label>
+                    <input type="number" id="cantidad" min="1" max="20"
+                           value="1" required>
+                </div>
+
+                <div class="seccion">
+                    <label>🥤 Tamaño de la bebida</label>
+                    <div class="opciones-bebida">
+                        <label class="opcion-tarjeta" for="bebidaP">
+                            <input type="radio" id="bebidaP"
+                                   name="tamanoBebida" value="pequena" checked>
+                            <span class="emoji">🥤</span>
+                            <strong>Pequeña</strong>
+                            <span>+$1.00</span>
                         </label>
-                    </div>
 
-                    <div class="checkbox-item">
-                        <input type="checkbox" id="extraHelado" value="helado">
-                        <label for="extraHelado" style="font-weight: normal;">
-                            Helado de Vainilla (+$1.80)
+                        <label class="opcion-tarjeta" for="bebidaM">
+                            <input type="radio" id="bebidaM"
+                                   name="tamanoBebida" value="mediana">
+                            <span class="emoji">🥤</span>
+                            <strong>Mediana</strong>
+                            <span>+$1.50</span>
+                        </label>
+
+                        <label class="opcion-tarjeta" for="bebidaG">
+                            <input type="radio" id="bebidaG"
+                                   name="tamanoBebida" value="grande">
+                            <span class="emoji">🥤</span>
+                            <strong>Grande</strong>
+                            <span>+$2.00</span>
                         </label>
                     </div>
                 </div>
+
+                <div class="seccion">
+                    <label>✨ Agrega algo extra</label>
+
+                    <div class="extras-grid">
+                        <label class="extra-item" for="extraPapas">
+                            <input type="checkbox" id="extraPapas" value="papas">
+                            <span>🍟</span>
+                            <div>
+                                <strong>Papas fritas</strong>
+                                <small>+$2.50</small>
+                            </div>
+                        </label>
+
+                        <label class="extra-item" for="extraHelado">
+                            <input type="checkbox" id="extraHelado" value="helado">
+                            <span>🍨</span>
+                            <div>
+                                <strong>Helado de vainilla</strong>
+                                <small>+$1.80</small>
+                            </div>
+                        </label>
+
+                        <label class="extra-item" for="extraEnsalada">
+                            <input type="checkbox" id="extraEnsalada" value="ensalada">
+                            <span>🥗</span>
+                            <div>
+                                <strong>Ensalada fresca</strong>
+                                <small>+$2.00</small>
+                            </div>
+                        </label>
+
+                        <label class="extra-item" for="extraPostre">
+                            <input type="checkbox" id="extraPostre" value="postre">
+                            <span>🍰</span>
+                            <div>
+                                <strong>Pastel del día</strong>
+                                <small>+$2.75</small>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="seccion">
+                    <label for="comentario">📝 Indicaciones especiales</label>
+                    <textarea id="comentario" rows="3"
+                        placeholder="Ejemplo: sin salsa, extra queso..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-principal">
+                    🧾 Calcular cuenta y guardar pedido
+                </button>
+            </form>
+
+            <div id="reciboRespuesta"></div>
+        </section>
+
+        <section class="panel-admin">
+            <div class="titulo-seccion">
+                <span class="numero">02</span>
+                <div>
+                    <h2>Administración de ventas</h2>
+                    <p>Consulta los pedidos guardados.</p>
+                </div>
             </div>
 
-            <button type="submit">Calcular Cuenta</button>
-        </form>
+            <div class="botones-admin">
+                <button type="button" id="btnVerHistorial" class="btn-azul">
+                    📋 Ver historial
+                </button>
 
-        <!-- Recibo del pedido -->
-        <div id="reciboRespuesta" style="display: none;"></div>
-    </div>
+                <button type="button" id="btnBorrarHistorial" class="btn-rojo">
+                    🗑️ Limpiar base de datos
+                </button>
+            </div>
 
-    <!-- Panel de Administración -->
-    <div class="panel-admin">
-        <h3>📋 Administración de Ventas</h3>
+            <div id="tablaHistorial"></div>
+        </section>
 
-        <div class="opciones-inline">
-            <button type="button" id="btnVerHistorial" class="btn-azul">
-                📋 Ver Historial
-            </button>
+    </main>
 
-            <button type="button" id="btnBorrarHistorial" class="btn-rojo">
-                🗑️ Limpiar Base de Datos
-            </button>
-        </div>
+    <footer>
+        <p>SAZÓN © 2026 · Preparado con ❤️ para ti</p>
+        <small>Gracias por elegirnos.</small>
+    </footer>
 
-        <!-- Aquí se mostrarán los pedidos guardados -->
-        <div id="tablaHistorial" style="display: none;"></div>
-    </div>
-
-    <!-- Primero se carga la biblioteca Dexie -->
+    <!-- Se conserva Dexie y el nombre de la base de datos -->
     <script src="https://unpkg.com/dexie@latest/dist/dexie.js"></script>
-
-    <!-- Después se carga tu archivo JavaScript -->
     <script src="programa.js"></script>
 
 </body>
